@@ -10,6 +10,7 @@ class TripItem extends React.Component{
 		this.handle_trip_item_focus_out = this.handle_trip_item_focus_out.bind(this)
 		this.handle_list_item_change = this.handle_list_item_change.bind(this)
 		this.handle_X_click = this.handle_X_click.bind(this)
+		this.handle_change_success = this.handle_change_success.bind(this)
 	}
 
 	handle_trip_item_focus_out(text){
@@ -22,6 +23,10 @@ class TripItem extends React.Component{
 
 	handle_X_click(){
 		this.props.on_trip_item_X_click(this.props.id, this.props.corresponds_id, this.props.trip_id)
+	}
+
+	handle_change_success(event){
+		this.props.on_trip_item_change_success(this.props.id, this.props.trip_id)
 	}
 
 	get_corresponds_name(){
@@ -59,14 +64,27 @@ class TripItem extends React.Component{
 					           onFocusOut={this.handle_trip_item_focus_out}/>
 			</td>
 			<td>
-				<div className="d-flex justify-content-between">
 					<Form.Control size="sm" as="select" onChange={this.handle_list_item_change}>
 						<option value="" selected hidden>{this.get_corresponds_name()}</option>
 						<option value="none">None</option>
 						{shopping_list_options}
 					</Form.Control>
-					<button type="button" onClick={this.handle_X_click} className="inventoryXButton btn btn-sm btn-outline-danger">✕</button>
+			</td>
+			<td>
+				<div className="d-flex justify-content-center">
+					<Form>
+						<Form.Check 
+							type="switch"
+							id={this.props.id}
+							onChange={this.handle_change_success}
+							checked={this.props.success}
+							label=""
+						/>
+					</Form>
 				</div>
+			</td>
+			<td>
+				<button type="button" onClick={this.handle_X_click} className="inventoryXButton btn btn-sm btn-outline-danger">✕</button>
 			</td>
 		</tr>
 

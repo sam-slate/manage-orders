@@ -77,6 +77,7 @@ class ShoppingTrips extends React.Component {
 																				  on_trip_item_corresponds_change={this.props.on_trip_item_corresponds_change}
 																				  on_trip_item_X_click={this.props.on_trip_item_X_click}
 																				  on_trip_notes_focus_out={this.props.on_trip_notes_focus_out}
+																				  on_trip_item_change_success={this.props.on_trip_item_change_success}
 																	/>)
 
 		return(

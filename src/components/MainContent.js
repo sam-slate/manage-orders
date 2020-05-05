@@ -41,7 +41,8 @@ class MainContent extends React.Component {
       	this.on_trip_item_focus_out = this.on_trip_item_focus_out.bind(this)
       	this.on_trip_item_add_click = this.on_trip_item_add_click.bind(this)
       	this.on_trip_item_corresponds_change = this.on_trip_item_corresponds_change.bind(this)
-      	this.on_trip_item_X_click = this.on_trip_item_X_click.bind(this)
+		this.on_trip_item_X_click = this.on_trip_item_X_click.bind(this)
+		this.on_trip_item_change_success =   this.on_trip_item_change_success.bind(this)
 		this.on_trip_notes_focus_out = this.on_trip_notes_focus_out.bind(this)
 
 		this.on_save_button_click = this.on_save_button_click.bind(this)
@@ -298,7 +299,7 @@ class MainContent extends React.Component {
 
 		// Add new trip item to the trip
 		new_shopping_trips[index].trip_items.push({id:new_item_id, name: "insert name", 
-													  corresponds_id: -1})
+													  corresponds_id: -1, success:false})
 
 		var new_state = this.state
 		new_state.shopping_trips = new_shopping_trips
@@ -404,6 +405,18 @@ class MainContent extends React.Component {
 		var new_state = this.state
 		new_state.shopping_trips = new_shopping_trips
 		new_state.shopping_list = new_shopping_list
+		this.setState(new_state)
+	}
+
+	on_trip_item_change_success(item_id, trip_id){
+		var new_shopping_trips = this.state.shopping_trips
+		var trips_index = new_shopping_trips.findIndex(element => element.id === trip_id)
+		var item_index = new_shopping_trips[trips_index].trip_items.findIndex(element => element.id === item_id)
+		
+		new_shopping_trips[trips_index].trip_items[item_index].success = ! new_shopping_trips[trips_index].trip_items[item_index].success
+
+		var new_state = this.state
+		new_state.shopping_trips = new_shopping_trips
 		this.setState(new_state)
 	}
 
@@ -651,6 +664,7 @@ class MainContent extends React.Component {
 										   on_trip_item_corresponds_change={this.on_trip_item_corresponds_change}
 										   on_trip_item_X_click={this.on_trip_item_X_click}
 										   on_trip_notes_focus_out={this.on_trip_notes_focus_out}
+										   on_trip_item_change_success={this.on_trip_item_change_success}
 							/>
 						</div>
 					</div>

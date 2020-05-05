@@ -93,9 +93,11 @@ class ShoppingTrip extends React.Component {
 						  name={item.name} 
 						  corresponds_id={item.corresponds_id}
 						  shopping_list={this.props.shopping_list}
+						  success={item.success}
 						  on_trip_item_focus_out={this.props.on_trip_item_focus_out}
 						  on_trip_item_corresponds_change={this.props.on_trip_item_corresponds_change}
 						  on_trip_item_X_click={this.props.on_trip_item_X_click}
+						  on_trip_item_change_success={this.props.on_trip_item_change_success}
 				/>
 			)
 		})
@@ -172,6 +174,8 @@ class ShoppingTrip extends React.Component {
 									</th>
 									<th scope="col">Trip Item</th>
 									<th scope="col">List Item</th>
+									<th scope="col">Success</th>
+									<th scope="col"></th>
 								</tr>
 							</thead>
 							<tbody>
