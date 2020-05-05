@@ -11,3 +11,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.shoppingTrip {
+	background-color: #ffffff;
+	margin-left: 0;
+	margin-right: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.shoppingListItem {
+	background-color: #ffffff;
+	margin-left: 0;
+	margin-right: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.inventoryListItem {
+	background-color: #ffffff;
+	margin-left: 0;
+	margin-right: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;	
+}
+
+.lowPriority{
+	background-color: #fffeab;
+}
+
+.mediumPriority{
+	background-color: #ffe4ab;
+}
+
+.highPriority{
+	background-color: #ffb4a8
+}
+
+.notQuite{
+	background-color: #ffabf4;
+}
+
+
+.inventoryXButton{
+	margin-left: 4px;
+}
+
+.inventoryNextButton{
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
+.inventoryEditButton{
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
+.addNew{
+	width: 100%;
+	background-color: #179109;
+}
+
+.saveButton{
+	margin-top: 20px;
+}
+
+.priorityInput{
+	margin-top:7px;
+}
+
