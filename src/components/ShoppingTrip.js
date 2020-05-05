@@ -106,11 +106,7 @@ class ShoppingTrip extends React.Component {
 					<div className="card-body">
 						<h4 className="card-title">
 							<div className="d-flex justify-content-between">
-								<EditableLabel text={this.props.name !== "" ? this.props.name : "_"}
-					                labelFontWeight='bold'
-					                inputFontWeight='bold'
-		                			onFocusOut={this.handle_name_focus_out}
-					            />
+								<div><b>{this.props.name}</b></div>
 								<div>
 									<button type="button" onClick={this.handle_X_click} className="inventoryXButton btn btn-sm btn-outline-danger">✕</button>
 								</div>
