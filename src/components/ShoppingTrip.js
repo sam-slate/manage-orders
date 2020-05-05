@@ -106,7 +106,7 @@ class ShoppingTrip extends React.Component {
 					<div className="card-body">
 						<h4 className="card-title">
 							<div className="d-flex justify-content-between">
-								<EditableLabel text={this.props.name}
+								<EditableLabel text={this.props.name !== "" ? this.props.name : "_"}
 					                labelFontWeight='bold'
 					                inputFontWeight='bold'
 		                			onFocusOut={this.handle_name_focus_out}
@@ -118,37 +118,37 @@ class ShoppingTrip extends React.Component {
 						</h4>
 						<div className="d-flex flex-row">
 							<b>Service:&nbsp;</b> 
-							<EditableLabel text={this.props.service}
+							<EditableLabel text={this.props.service !== "" ? this.props.service : "_"}
 					                	onFocusOut={this.handle_service_focus_out}
 					        /> 
 					    </div>
 					    <div className="d-flex flex-row">
 							<b>Store:&nbsp;</b> 
-							<EditableLabel text={this.props.store}
+							<EditableLabel text={this.props.store !== "" ? this.props.store : "_"}
 					                	onFocusOut={this.handle_store_focus_out}
 					        /> 
 					    </div>
 						<div className="d-flex flex-row">
 							<b>Method:&nbsp;</b> 
-							<EditableLabel text={this.props.method}
+							<EditableLabel text={this.props.method !== "" ? this.props.method : "_"}
 					                	onFocusOut={this.handle_method_focus_out}
 					        /> 
 					    </div>						
 						<div className="d-flex flex-row">
 							<b>Date:&nbsp;</b> 
-							<EditableLabel text={this.props.date}
+							<EditableLabel text={this.props.date !== "" ? this.props.date : "_"}
 					                	onFocusOut={this.handle_date_focus_out}
 					        /> 
 					    </div>						
 						<div className="d-flex flex-row">
 							<b>Estimated Cost:&nbsp;</b> 
-							<EditableLabel text={this.props.estimated_cost}
+							<EditableLabel text={this.props.estimated_cost !== "" ? this.props.estimated_cost : "_"}
 					                	onFocusOut={this.handle_estimated_cost_focus_out}
 					        /> 
 					    </div>
 						<div className="d-flex flex-row">
 							<b>Notes:&nbsp;</b> 
-							<EditableLabel text={this.props.notes}
+							<EditableLabel text={this.props.notes !== "" ? this.props.notes : "_"}
 					                	onFocusOut={this.handle_notes_focus_out}
 					        /> 
 					    </div>

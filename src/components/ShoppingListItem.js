@@ -75,7 +75,7 @@ class ShoppingListItem extends React.Component {
 			<div className="card shoppingListItem" style={{backgroundColor: background_color}}> 
 				<div className="card-body">
 					<div className="d-flex justify-content-between">
-						<EditableLabel text={this.props.name}
+						<EditableLabel text={this.props.name !== "" ? this.props.name : "_"}
 			                inputWidth='120px'
 			                inputHeight='25px'
 			                inputMaxLength={50}
@@ -107,7 +107,7 @@ class ShoppingListItem extends React.Component {
 				   	</div>
 					<div className="d-flex flex-row">
 						Notes:&nbsp;
-						<EditableLabel text={this.props.notes}
+						<EditableLabel text={this.props.notes !== "" ? this.props.notes : "_"}
 					            	onFocusOut={this.handle_notes_focus_out}
 					    /> 
 					</div>

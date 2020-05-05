@@ -54,7 +54,7 @@ class TripItem extends React.Component{
 		<tr>
 			<th scope="row">{this.props.index + 1}</th>
 			<td>
-				<EditableLabel text={this.props.name}
+				<EditableLabel text={this.props.name !== "" ? this.props.name : "_"}
 							   inputWidth='120px'
 					           onFocusOut={this.handle_trip_item_focus_out}/>
 			</td>

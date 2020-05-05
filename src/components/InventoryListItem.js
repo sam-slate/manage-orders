@@ -49,7 +49,7 @@ class InventoryListItem extends React.Component {
 			<div className="card inventoryListItem">
 				<div className="card-body">
 					<div className="d-flex justify-content-between">
-			            <EditableLabel text={this.props.name}
+			            <EditableLabel text={this.props.name !== "" ? this.props.name : "_"}
 			                inputWidth='120px'
 			                inputHeight='25px'
 			                inputMaxLength={30}
@@ -65,14 +65,14 @@ class InventoryListItem extends React.Component {
 					</div>
 					<div className="d-flex flex-row">
 							Location:&nbsp;
-							<EditableLabel text={this.props.location}
+							<EditableLabel text={this.props.location !== "" ? this.props.location : "_"}
 										onFocusOut={this.handle_location_focus_out}
 										inputWidth='120px'
 					        /> 
 					</div>
 					<div className="d-flex flex-row">
 							Notes:&nbsp;
-							<EditableLabel text={this.props.notes}
+							<EditableLabel text={this.props.notes !== "" ? this.props.notes : "_"}
 					                	onFocusOut={this.handle_notes_focus_out}
 					        /> 
 					</div>
