@@ -67,6 +67,7 @@ class MainContent extends React.Component {
 
 				// get highest inventory ID
 				var max_inventory_ID = Math.max.apply(null, inventory.map(item => parseInt(item.id)))
+				if (max_inventory_ID === -Infinity) {max_inventory_ID = 0} 
 				console.log("Highest inventory ID: " + max_inventory_ID)
 
 				var new_state = this.state
@@ -89,6 +90,7 @@ class MainContent extends React.Component {
 
 				// get highest shopping list ID 
 				var max_shopping_list_ID = Math.max.apply(null, shopping_list.map(item => parseInt(item.id)))
+				if (max_shopping_list_ID === -Infinity) {max_shopping_list_ID = 0} 
 				console.log("Highest shopping list ID: " + max_shopping_list_ID)
 
 				var new_state = this.state
@@ -109,6 +111,7 @@ class MainContent extends React.Component {
 
 					// get highest shopping trip ID
 					var max_shopping_trip_ID = Math.max.apply(null, shopping_trips.map(item => parseInt(item.id)))
+					if (max_shopping_trip_ID === -Infinity) {max_shopping_trip_ID = 0} 
 					console.log("Highest shopping list ID: " + max_shopping_trip_ID)
 		
 					// get highest shopping trip item ID (all trip items use the same ID counter)
@@ -116,6 +119,7 @@ class MainContent extends React.Component {
 					var shopping_trip_items = shopping_trips.reduce((item_list, trip) => item_list.concat(trip.trip_items), [])
 					var shopping_trip_item_IDs = shopping_trip_items.map(item => item.id)
 					var max_shopping_trip_item_ID = Math.max.apply(null, shopping_trip_item_IDs)
+					if (max_shopping_trip_item_ID === -Infinity) {max_shopping_trip_item_ID = 0} 
 		
 					var new_state = this.state
 					new_state.shopping_trips = shopping_trips
