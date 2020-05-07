@@ -1,5 +1,6 @@
 import React from "react"
-import EditableLabel from 'react-inline-editing'
+// import EditableLabel from 'react-inline-editing'
+import EditableLabel from 'react-inline-edition';
 
 class InventoryListItem extends React.Component {
 
@@ -49,9 +50,9 @@ class InventoryListItem extends React.Component {
 			<div className="card inventoryListItem">
 				<div className="card-body">
 					<div className="d-flex justify-content-between">
-			            <EditableLabel text={this.props.name !== "" ? this.props.name : "_"}
-			                inputWidth='120px'
-			                inputHeight='25px'
+						<EditableLabel text={this.props.name}
+							inputWidth='100px'
+							inputHeight='20px'
 			                inputMaxLength={30}
 			                labelFontWeight='bold'
 							inputFontWeight='bold'
@@ -63,16 +64,17 @@ class InventoryListItem extends React.Component {
 							<button type="button" onClick={this.handle_X_click} className="inventoryXButton btn btn-sm btn-outline-danger">✕</button>
 						</div>
 					</div>
+					<hr/>
 					<div className="d-flex flex-row">
 							Location:&nbsp;
-							<EditableLabel text={this.props.location !== "" ? this.props.location : "_"}
+							<EditableLabel text={this.props.location}
 										onFocusOut={this.handle_location_focus_out}
 										inputWidth='120px'
 					        /> 
 					</div>
 					<div className="d-flex flex-row">
 							Notes:&nbsp;
-							<EditableLabel text={this.props.notes !== "" ? this.props.notes : "_"}
+							<EditableLabel text={this.props.notes}
 					                	onFocusOut={this.handle_notes_focus_out}
 					        /> 
 					</div>

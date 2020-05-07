@@ -1,5 +1,5 @@
 import React from "react"
-import EditableLabel from 'react-inline-editing'
+import EditableLabel from 'react-inline-edition';
 import Form from 'react-bootstrap/Form'
 
 
@@ -59,7 +59,7 @@ class TripItem extends React.Component{
 		<tr>
 			<th scope="row">{this.props.index + 1}</th>
 			<td>
-				<EditableLabel text={this.props.name !== "" ? this.props.name : "_"}
+				<EditableLabel text={this.props.name}
 							   inputWidth='120px'
 					           onFocusOut={this.handle_trip_item_focus_out}/>
 			</td>

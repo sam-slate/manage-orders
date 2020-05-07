@@ -1,5 +1,5 @@
 import React from "react"
-import EditableLabel from 'react-inline-editing'
+import EditableLabel from 'react-inline-edition';
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
@@ -75,7 +75,7 @@ class ShoppingListItem extends React.Component {
 			<div className="card shoppingListItem" style={{backgroundColor: background_color}}> 
 				<div className="card-body">
 					<div className="d-flex justify-content-between">
-						<EditableLabel text={this.props.name !== "" ? this.props.name : "_"}
+						<EditableLabel text={this.props.name}
 			                inputWidth='120px'
 			                inputHeight='25px'
 			                inputMaxLength={50}
@@ -89,6 +89,7 @@ class ShoppingListItem extends React.Component {
 							<button type="button" onClick={this.handle_X_click} className="inventoryXButton btn btn-sm btn-outline-danger">✕</button>
 						</div>
 					</div>
+					<hr/>
 					<div className="priorityInput">
 						<Form.Group controlId="exampleForm.ControlSelect1">
 							<Row>
@@ -107,7 +108,7 @@ class ShoppingListItem extends React.Component {
 				   	</div>
 					<div className="d-flex flex-row">
 						Notes:&nbsp;
-						<EditableLabel text={this.props.notes !== "" ? this.props.notes : "_"}
+						<EditableLabel text={this.props.notes}
 					            	onFocusOut={this.handle_notes_focus_out}
 					    /> 
 					</div>

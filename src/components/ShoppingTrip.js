@@ -1,5 +1,5 @@
 import React from "react"
-import EditableLabel from 'react-inline-editing'
+import EditableLabel from 'react-inline-edition';
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
@@ -116,37 +116,37 @@ class ShoppingTrip extends React.Component {
 						</h4>
 						<div className="d-flex flex-row">
 							<b>Service:&nbsp;</b> 
-							<EditableLabel text={this.props.service !== "" ? this.props.service : "_"}
+							<EditableLabel text={this.props.service}
 					                	onFocusOut={this.handle_service_focus_out}
 					        /> 
 					    </div>
 					    <div className="d-flex flex-row">
 							<b>Store:&nbsp;</b> 
-							<EditableLabel text={this.props.store !== "" ? this.props.store : "_"}
+							<EditableLabel text={this.props.store}
 					                	onFocusOut={this.handle_store_focus_out}
 					        /> 
 					    </div>
 						<div className="d-flex flex-row">
 							<b>Method:&nbsp;</b> 
-							<EditableLabel text={this.props.method !== "" ? this.props.method : "_"}
+							<EditableLabel text={this.props.method}
 					                	onFocusOut={this.handle_method_focus_out}
 					        /> 
 					    </div>						
 						<div className="d-flex flex-row">
 							<b>Date:&nbsp;</b> 
-							<EditableLabel text={this.props.date !== "" ? this.props.date : "_"}
+							<EditableLabel text={this.props.date}
 					                	onFocusOut={this.handle_date_focus_out}
 					        /> 
 					    </div>						
 						<div className="d-flex flex-row">
 							<b>Estimated Cost:&nbsp;</b> 
-							<EditableLabel text={this.props.estimated_cost !== "" ? this.props.estimated_cost : "_"}
+							<EditableLabel text={this.props.estimated_cost}
 					                	onFocusOut={this.handle_estimated_cost_focus_out}
 					        /> 
 					    </div>
 						<div className="d-flex flex-row">
 							<b>Notes:&nbsp;</b> 
-							<EditableLabel text={this.props.notes !== "" ? this.props.notes : "_"}
+							<EditableLabel text={this.props.notes}
 					                	onFocusOut={this.handle_notes_focus_out}
 					        /> 
 					    </div>
