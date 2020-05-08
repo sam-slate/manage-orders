@@ -57,7 +57,7 @@ class ShoppingList extends React.Component {
 
 		return(
 			<div>
-				<h2>Shopping List</h2>
+				<h2>Shopping Needs</h2>
 				<br/>
 				<button type="button" onClick={this.props.on_shopping_add_click} className="btn btn-success addNew">Add New</button>
 				<div className="priorityInput">

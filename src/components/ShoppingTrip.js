@@ -172,9 +172,9 @@ class ShoppingTrip extends React.Component {
 									<th scope="col">
 										<button type="button" className="btn btn-success addNew" onClick={this.handle_add_trip_item_click}>Add</button>
 									</th>
-									<th scope="col">Trip Item</th>
-									<th scope="col">List Item</th>
-									<th scope="col">Success</th>
+									<th scope="col">Item</th>
+									<th scope="col">Related Need</th>
+									<th scope="col">Success?</th>
 									<th scope="col"></th>
 								</tr>
 							</thead>

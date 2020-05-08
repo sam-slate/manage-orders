@@ -446,8 +446,8 @@ class MainContent extends React.Component {
 				// For each trip ID, finds the name from the shopping trip
 				var index = this.state.shopping_trips.findIndex(element => element.id === trip.id)
 				
-				// Check if the shopping trip exists
-				if (index === -1){
+				// Check if the shopping trip doesn't exist or is cancelled or finished
+				if (index === -1 || this.state.shopping_trips[index].status === "cancelled" || this.state.shopping_trips[index].status === "finished"){
 					// If so, skip it
 					return result
 				}
