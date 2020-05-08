@@ -45,6 +45,10 @@ class MainContent extends React.Component {
 		this.on_trip_item_change_success =   this.on_trip_item_change_success.bind(this)
 		this.on_trip_notes_focus_out = this.on_trip_notes_focus_out.bind(this)
 
+		this.save_inventory = this.save_inventory.bind(this)
+		this.save_shopping_list = this.save_shopping_list.bind(this)
+		this.save_shopping_trips = this.save_shopping_trips.bind(this)
+		this.save_all = this.save_all.bind(this)
 		this.on_save_button_click = this.on_save_button_click.bind(this)
 
 		this.state = {
@@ -54,7 +58,8 @@ class MainContent extends React.Component {
 			max_shopping_list_ID: 0,
 			shopping_trips: [],
 			max_shopping_trip_ID: 0,
-			max_shopping_trip_item_ID: 0
+			max_shopping_trip_item_ID: 0,
+			save_text: "Save"
 		}
 	}
 
@@ -134,35 +139,84 @@ class MainContent extends React.Component {
 		  )
 	  }
 
-	/* Saving and Loading functions */
+	/* Save functions */
 
-	on_save_button_click(){
+	async save_inventory(){
 		var requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(this.state.inventory)
 		};
-		fetch(SERVER_DOMAIN + "/api/inventory", requestOptions)
+		return fetch(SERVER_DOMAIN + "/api/inventory", requestOptions)
 			.then(response => response.json())
-			.then(data => console.log(data));
+			.then(data => {
+				console.log(data)
+				return data
+			});
+	}
 
-		requestOptions = {
+	async save_shopping_list(){
+		var requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(this.state.shopping_list)
 		};
-		fetch(SERVER_DOMAIN + "/api/shopping_list", requestOptions)
+		return fetch(SERVER_DOMAIN + "/api/shopping_list", requestOptions)
 			.then(response => response.json())
-			.then(data => console.log(data));
-		
-		requestOptions = {
+			.then(data => {
+				console.log(data)
+				return data
+			});
+	}
+	
+	async save_shopping_trips(){
+		var requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(this.state.shopping_trips)
 		};
-		fetch(SERVER_DOMAIN + "/api/shopping_trips", requestOptions)
+		return fetch(SERVER_DOMAIN + "/api/shopping_trips", requestOptions)
 			.then(response => response.json())
-			.then(data => console.log(data));
+			.then(data => {
+				console.log(data)
+				return data
+			});
+	}
+
+	save_all(){
+		return Promise.all([this.save_inventory(), this.save_shopping_list(), this.save_shopping_trips()])
+	}
+
+	on_save_button_click(){
+		this.save_all().then(values => {
+			console.log(values)
+
+			if(values.every(item => item)){
+				console.log("Saved succesfully")
+				var new_state = this.state
+				new_state.save_text = "Success!"
+				this.setState(new_state)
+
+				setTimeout(() => {
+					var new_state = this.state
+					new_state.save_text = "Save"
+					this.setState(new_state)
+				}, 2000);
+			} else {
+				console.log("Saved succesfully")
+				var new_state = this.state
+				new_state.save_text = "Error"
+				this.setState(new_state)
+
+				setTimeout(() => {
+					var new_state = this.state
+					new_state.save_text = "Save"
+					this.setState(new_state)
+				}, 2000);
+			}
+		})
+
+		
 	}
 
 	/* Shopping Trip functions */
@@ -630,7 +684,7 @@ class MainContent extends React.Component {
 		return(
 			<div>
 				<div className="container">
-					<Header on_save_button_click={this.on_save_button_click}/>
+					<Header on_save_button_click={this.on_save_button_click} save_text={this.state.save_text}/>
 				</div>
 				<div className="container">
 				    <div className ="row">
