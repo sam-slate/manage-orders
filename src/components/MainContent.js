@@ -208,13 +208,18 @@ class MainContent extends React.Component {
 	}
 
 	on_trip_date_focus_out(text, id){
-		var new_shopping_trips = this.state.shopping_trips
-		var index = new_shopping_trips.findIndex(element => element.id === id)
-		new_shopping_trips[index].date = text
 
-		var new_state = this.state
-		new_state.shopping_trips= new_shopping_trips
-		this.setState(new_state)
+		//Check if valid date
+		const date_regex = /^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$/
+		if (date_regex.test(text)){
+			var new_shopping_trips = this.state.shopping_trips
+			var index = new_shopping_trips.findIndex(element => element.id === id)
+			new_shopping_trips[index].date = text
+
+			var new_state = this.state
+			new_state.shopping_trips= new_shopping_trips
+			this.setState(new_state)
+		}
 	}
 
 	on_trip_estimated_cost_focus_out(text, id){
