@@ -39,23 +39,6 @@ code {
 	width: 100%;	
 }
 
-.lowPriority{
-	background-color: #fffeab;
-}
-
-.mediumPriority{
-	background-color: #ffe4ab;
-}
-
-.highPriority{
-	background-color: #ffb4a8
-}
-
-.notQuite{
-	background-color: #ffabf4;
-}
-
-
 .inventoryXButton{
 	margin-left: 4px;
 }
@@ -83,3 +66,8 @@ code {
 	margin-top:7px;
 }
 
+.table th { border-top: none; }
+
+.shoppingTripTable{
+	background-color: #e6e4e4;
+}

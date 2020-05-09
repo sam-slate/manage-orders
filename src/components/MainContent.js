@@ -338,13 +338,13 @@ class MainContent extends React.Component {
 		// Add new trip to the inventory
 		new_shopping_trips.unshift({id: new_id, 
 									name: "Trip " + new_id, 
-									service: "insert service",
-									store: "insert store",
-									method: "insert method",
+									service: "",
+									store: "",
+									method: "",
 									date: "mm/dd/yyyy",
 									status: "in process",
 									estimated_cost: "$",
-									notes: "insert notes", 
+									notes: "", 
 									trip_items: [] 
 									})
 
@@ -361,7 +361,7 @@ class MainContent extends React.Component {
 		var new_item_id = this.state.max_shopping_trip_item_ID + 1
 
 		// Add new trip item to the trip
-		new_shopping_trips[index].trip_items.push({id:new_item_id, name: "insert name", 
+		new_shopping_trips[index].trip_items.push({id:new_item_id, name: "", 
 													  corresponds_id: -1, success:false})
 
 		var new_state = this.state

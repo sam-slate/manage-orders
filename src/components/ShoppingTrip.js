@@ -108,80 +108,99 @@ class ShoppingTrip extends React.Component {
 					<div className="card-body">
 						<h4 className="card-title">
 							<div className="d-flex justify-content-between">
-								<div><b>{this.props.name}</b></div>
+								<h2>{this.props.name}</h2>
 								<div>
 									<button type="button" onClick={this.handle_X_click} className="inventoryXButton btn btn-sm btn-outline-danger">✕</button>
 								</div>
 							</div>
 						</h4>
-						<div className="d-flex flex-row">
-							<b>Service:&nbsp;</b> 
-							<EditableLabel text={this.props.service}
-					                	onFocusOut={this.handle_service_focus_out}
-					        /> 
-					    </div>
-					    <div className="d-flex flex-row">
-							<b>Store:&nbsp;</b> 
-							<EditableLabel text={this.props.store}
-					                	onFocusOut={this.handle_store_focus_out}
-					        /> 
-					    </div>
-						<div className="d-flex flex-row">
-							<b>Method:&nbsp;</b> 
-							<EditableLabel text={this.props.method}
-					                	onFocusOut={this.handle_method_focus_out}
-					        /> 
-					    </div>						
-						<div className="d-flex flex-row">
-							<b>Date:&nbsp;</b> 
-							<EditableLabel text={this.props.date}
-					                	onFocusOut={this.handle_date_focus_out}
-					        /> 
-					    </div>						
-						<div className="d-flex flex-row">
-							<b>Estimated Cost:&nbsp;</b> 
-							<EditableLabel text={this.props.estimated_cost}
-					                	onFocusOut={this.handle_estimated_cost_focus_out}
-					        /> 
-					    </div>
-						<div className="d-flex flex-row">
-							<b>Notes:&nbsp;</b> 
-							<EditableLabel text={this.props.notes}
-					                	onFocusOut={this.handle_notes_focus_out}
-					        /> 
-					    </div>
-					    <div className="priorityInput">
-							<Form.Group controlId="exampleForm.ControlSelect1">
-								<Row>
-									<Col sm={2}>
-								      	<Form.Label><b>Status:</b></Form.Label>
-								    </Col>
-								   	<Col sm={4}>
-								      	<Form.Control size="sm" as="select" defaultValue={this.props.status} onChange={this.handle_status_change}>
-								        	<option value="in_process">In Process</option>
-								        	<option value="finished">Finished</option>
-								        	<option value="cancelled">Cancelled</option>
-								      	</Form.Control>
-								    </Col>
-							    </Row>
-						    </Form.Group>
-					   	</div>
-						<table className="table">
-							<thead>
-								<tr>
-									<th scope="col">
-										<button type="button" className="btn btn-success addNew" onClick={this.handle_add_trip_item_click}>Add</button>
-									</th>
-									<th scope="col">Item</th>
-									<th scope="col">Related Need</th>
-									<th scope="col">Success?</th>
-									<th scope="col"></th>
-								</tr>
-							</thead>
-							<tbody>
-								{trip_items_as_table}
-							</tbody>
-						</table>
+						<div className="container">
+							<div className="row">
+								<div className="col-6 d-flex flex-row">
+									<b>Service:&nbsp;</b> 
+									<EditableLabel text={this.props.service}
+												onFocusOut={this.handle_service_focus_out}
+									/> 
+								</div>
+								<div className="col-6 d-flex flex-row">
+									<b>Store:&nbsp;</b> 
+									<EditableLabel text={this.props.store}
+												onFocusOut={this.handle_store_focus_out}
+									/> 
+								</div>
+							</div>
+						</div>
+						<div className="container">
+							<div className="row">
+								<div className="col-6 d-flex flex-row">
+									<b>Method:&nbsp;</b> 
+									<EditableLabel text={this.props.method}
+												onFocusOut={this.handle_method_focus_out}
+									/> 
+								</div>						
+								<div className="col-6 d-flex flex-row">
+									<b>Date:&nbsp;</b> 
+									<EditableLabel text={this.props.date}
+												onFocusOut={this.handle_date_focus_out}
+									/> 
+								</div>						
+							</div>
+						</div>
+						<div className="container">
+							<div className="row">
+								<div className="col-6 d-flex flex-row">
+									<b>Estimated Cost:&nbsp;</b> 
+									<EditableLabel text={this.props.estimated_cost}
+												onFocusOut={this.handle_estimated_cost_focus_out}
+									/> 
+								</div>
+								<div className="col-6 d-flex flex-row">
+									<b>Notes:&nbsp;</b> 
+									<EditableLabel text={this.props.notes}
+												onFocusOut={this.handle_notes_focus_out}
+									/> 
+								</div>
+							</div>
+						</div>
+						<div className="container">
+							<div className="priorityInput">
+								<Form.Group controlId="exampleForm.ControlSelect1">
+									<Row>
+										<Col sm={2}>
+											<Form.Label><b>Status:</b></Form.Label>
+										</Col>
+										<Col sm={4}>
+											<Form.Control size="sm" as="select" defaultValue={this.props.status} onChange={this.handle_status_change}>
+												<option value="in_process">In Process</option>
+												<option value="finished">Finished</option>
+												<option value="cancelled">Cancelled</option>
+											</Form.Control>
+										</Col>
+									</Row>
+								</Form.Group>
+							</div>
+						</div>
+						<hr/>
+						<div className="container">
+							<div className="d-flex justify-content-between">
+								<h4>Shopping Trip Items</h4>
+								<button type="button" className="btn btn-sm btn-success" onClick={this.handle_add_trip_item_click}>Add Trip Item</button>
+							</div>
+							<table className="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col"></th>
+										<th scope="col">Item</th>
+										<th scope="col">Need</th>
+										<th scope="col">Success?</th>
+										<th scope="col"></th>
+									</tr>
+								</thead>
+								<tbody>
+									{trip_items_as_table}
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
