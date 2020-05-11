@@ -1,0 +1,1 @@
+[{"id":3,"name":"Trip 3","service":"Amazon Prime","store":"Whole Foods","method":"pickup","date":"05/11/2020","status":"finished","estimated_cost":"$","notes":"target Monday or Tuesday","trip_items":[{"id":1,"name":"white bread","corresponds_id":-1,"success":true}]}]
