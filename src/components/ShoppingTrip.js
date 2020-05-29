@@ -184,14 +184,14 @@ class ShoppingTrip extends React.Component {
 						<div className="container">
 							<div className="d-flex justify-content-between">
 								<h4>Shopping Trip Items</h4>
-								<button type="button" className="btn btn-sm btn-success" onClick={this.handle_add_trip_item_click}>Add Trip Item</button>
+								<button type="button" className="btn btn-sm btn-success" onClick={this.handle_add_trip_item_click}>Add New Trip Item</button>
 							</div>
 							<table className="table table-striped">
 								<thead>
 									<tr>
 										<th scope="col"></th>
 										<th scope="col">Item</th>
-										<th scope="col">Need</th>
+										<th scope="col">Associated Need</th>
 										<th scope="col">Success?</th>
 										<th scope="col"></th>
 									</tr>

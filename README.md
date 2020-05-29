@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# whack-a-button
 
-## Available Scripts
+Multiplayer, real-time whack-a-mole game built with React, Node.js, and Express. Configured for deployment on Heroku. Built as a learning project for the React stack and socket.io.
 
-In the project directory, you can run:
+The home directory contains the server and the client directory contains the client. 
 
-### `npm start`
+## To deploy locally:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1) Install node modules by running `node install` in both the home directory and the client directory.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+2) Start the server by typing `node server.js` in the home directory. The server should be running on port 8080. If you change the port, make sure to update the proxy setting in /client/package.json so the client can still find the server locally.
 
-### `npm test`
+3) Start the client by typing `npm start` in the client directory. The client should be running on port 3000.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4) View the website on http://localhost:3000/
 
-### `npm run build`
+## To deploy to heroku:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1) Create a heroku account and install the [heroku cli](https://devcenter.heroku.com/articles/heroku-cli).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+2) In the home directory, create a new heroku app with `heroku create <app-name>`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3) Deploy the app to heroku with `git push heroku`.
 
-### `npm run eject`
+4) View the website at the printed address, which should be app-name.herokuapp.com.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Helpful Resources Used
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For socket.io:
+- https://www.signet.hr/creating-a-chat-web-app-using-express-js-react-js-socket-io/
+- https://medium.com/@ethanryan/making-a-simple-real-time-collaboration-app-with-react-node-express-and-yjs-a261597fdd44
+- https://socket.io/get-started/chat/
+- https://medium.com/dailyjs/combining-react-with-socket-io-for-real-time-goodness-d26168429a34
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+For React/Express heroku deployment:
+- https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app
+- https://daveceddia.com/deploy-react-express-app-heroku/
+- https://blog.bitsrc.io/react-production-deployment-part-3-heroku-316319744885

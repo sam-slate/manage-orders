@@ -84,7 +84,7 @@ class ShoppingTrips extends React.Component {
 			<div>
 				<h2>Shopping Trips</h2>
 				<br/>
-				<button type="button" className="btn btn-success addNew" onClick={this.props.on_trips_add_click}>Add New</button>
+				<button type="button" className="btn btn-success addNew" onClick={this.props.on_trips_add_click}>Add New Shopping Trip</button>
 				<div className="priorityInput">
 							<Form.Group controlId="exampleForm.ControlSelect1">
 								<Row>

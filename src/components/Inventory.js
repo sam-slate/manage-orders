@@ -59,7 +59,7 @@ class Inventory extends React.Component {
 			<div>
 				<h2>Inventory</h2>
 				<br/>
-				<button type="button" onClick={this.props.on_inventory_add_click} className="btn btn-success addNew">Add New</button>
+				<button type="button" onClick={this.props.on_inventory_add_click} className="btn btn-success addNew">Add New Inventory Item</button>
 				<div className="priorityInput">
 							<Form.Group controlId="exampleForm.ControlSelect1">
 								<Row>
